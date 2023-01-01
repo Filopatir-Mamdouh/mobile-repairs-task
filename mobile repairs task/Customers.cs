@@ -1,13 +1,18 @@
 namespace mobile_repairs_task
 {
-    public partial class Form1 : Form
+    public partial class Customers : Form
     {
-        public Form1()
+        public Customers()
         {
             InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
