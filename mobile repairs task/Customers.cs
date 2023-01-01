@@ -30,6 +30,7 @@ namespace mobile_repairs_task
                 int r = con.setData(query);
                 MessageBox.Show("Customer Added Successfully");
                 showCustomers();
+                clear();
 
             }
         }

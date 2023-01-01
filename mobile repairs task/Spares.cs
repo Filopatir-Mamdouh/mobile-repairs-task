@@ -40,6 +40,7 @@ namespace mobile_repairs_task
                 int r = con.setData(query);
                 MessageBox.Show("Spare Added Successfully");
                 showSpares();
+                clear();
 
             }
         }
