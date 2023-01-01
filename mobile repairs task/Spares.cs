@@ -14,7 +14,7 @@ namespace mobile_repairs_task
     public partial class Spares : Form
     {
         Functions con;
-        string query;
+        private string query="";
         public Spares()
         {
             InitializeComponent();
