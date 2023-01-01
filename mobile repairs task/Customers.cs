@@ -58,7 +58,7 @@ namespace mobile_repairs_task
                 string name = CustName.Text;
                 string phone = CustPhone.Text;
                 string add = CustAdd.Text;
-                query = "UPDATE customertb VALUES('" + name + "','" + phone + "','" + add + "') WHERE CustID ="+key;
+                query = "UPDATE customertb SET CustName = '" + name + "', CustPhone = '" + phone + "', CustAdd = '" + add + "' WHERE CustID ="+key;
                 int r = con.setData(query);
                 MessageBox.Show("Customer Updated :D");
                 showCustomers();
@@ -73,7 +73,7 @@ namespace mobile_repairs_task
             }
             else
             {
-                query = "DELETE * FROM customertb WHERE CustID=" + key;
+                query = "DELETE FROM customertb WHERE CustID=" + key;
                 int r = con.setData(query);
                 MessageBox.Show("Customer Deleted!!");
                 showCustomers();
