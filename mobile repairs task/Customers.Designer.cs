@@ -210,7 +210,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.customerlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.customerlist.ColumnHeadersHeight = 4;
+            this.customerlist.ColumnHeadersHeight = 20;
             this.customerlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -223,6 +223,7 @@
             this.customerlist.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.customerlist.Location = new System.Drawing.Point(397, 66);
             this.customerlist.Name = "customerlist";
+            this.customerlist.ReadOnly = true;
             this.customerlist.RowHeadersVisible = false;
             this.customerlist.RowTemplate.Height = 25;
             this.customerlist.Size = new System.Drawing.Size(620, 615);
@@ -234,13 +235,13 @@
             this.customerlist.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.customerlist.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.customerlist.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.customerlist.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.customerlist.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.customerlist.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.customerlist.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customerlist.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.customerlist.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.customerlist.ThemeStyle.HeaderStyle.Height = 4;
-            this.customerlist.ThemeStyle.ReadOnly = false;
+            this.customerlist.ThemeStyle.HeaderStyle.Height = 20;
+            this.customerlist.ThemeStyle.ReadOnly = true;
             this.customerlist.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.customerlist.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.customerlist.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
