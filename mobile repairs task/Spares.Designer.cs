@@ -156,6 +156,7 @@
             this.deletebtn.TabIndex = 24;
             this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // savebtn
             // 
@@ -169,6 +170,7 @@
             this.savebtn.TabIndex = 23;
             this.savebtn.Text = "Save";
             this.savebtn.UseVisualStyleBackColor = false;
+            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
             // 
             // updatebtn
             // 
@@ -182,6 +184,7 @@
             this.updatebtn.TabIndex = 22;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // Cost
             // 
@@ -205,7 +208,6 @@
             this.PartName.Name = "PartName";
             this.PartName.Size = new System.Drawing.Size(177, 29);
             this.PartName.TabIndex = 17;
-            this.PartName.TextChanged += new System.EventHandler(this.PartName_TextChanged);
             // 
             // label2
             // 

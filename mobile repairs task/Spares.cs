@@ -21,11 +21,6 @@ namespace mobile_repairs_task
             con = new Functions();
             showSpares();
         }
-
-        private void PartName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void showSpares()
         {
             query = "SELECT * FROM sparetb";
