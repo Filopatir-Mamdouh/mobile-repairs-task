@@ -60,7 +60,22 @@ namespace mobile_repairs_task
                 string add = CustAdd.Text;
                 query = "UPDATE customertb VALUES('" + name + "','" + phone + "','" + add + "') WHERE CustID ="+key;
                 int r = con.setData(query);
-                MessageBox.Show("Customer Updated");
+                MessageBox.Show("Customer Updated :D");
+                showCustomers();
+            }
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Please Select a Customer");
+            }
+            else
+            {
+                query = "DELETE * FROM customertb WHERE CustID=" + key;
+                int r = con.setData(query);
+                MessageBox.Show("Customer Deleted!!");
                 showCustomers();
             }
         }
