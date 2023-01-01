@@ -46,6 +46,13 @@ namespace mobile_repairs_task
             else 
                 key= Convert.ToInt32(customerlist.SelectedRows[0].Cells[0].Value.ToString());
         }
+        private void clear()
+        {
+            CustName.Text = "";
+            CustPhone.Text = "";
+            CustAdd.Text = "";
+            key = 0;
+        }
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
@@ -61,6 +68,7 @@ namespace mobile_repairs_task
                 query = "UPDATE customertb SET CustName = '" + name + "', CustPhone = '" + phone + "', CustAdd = '" + add + "' WHERE CustID ="+key;
                 int r = con.setData(query);
                 MessageBox.Show("Customer Updated :D");
+                clear();
                 showCustomers();
             }
         }
@@ -76,6 +84,7 @@ namespace mobile_repairs_task
                 query = "DELETE FROM customertb WHERE CustID=" + key;
                 int r = con.setData(query);
                 MessageBox.Show("Customer Deleted!!");
+                clear();
                 showCustomers();
             }
         }
