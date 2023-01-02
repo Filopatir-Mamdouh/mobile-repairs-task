@@ -337,18 +337,18 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.replist.DefaultCellStyle = dataGridViewCellStyle3;
             this.replist.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.replist.Location = new System.Drawing.Point(389, 65);
+            this.replist.Location = new System.Drawing.Point(389, 68);
             this.replist.Name = "replist";
             this.replist.ReadOnly = true;
             this.replist.RowHeadersVisible = false;
-            this.replist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.replist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.replist.RowTemplate.Height = 25;
-            this.replist.Size = new System.Drawing.Size(634, 615);
+            this.replist.Size = new System.Drawing.Size(620, 615);
             this.replist.TabIndex = 40;
             this.replist.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.YellowGreen;
             this.replist.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.replist.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.replist.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.replist.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.replist.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.replist.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.replist.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -364,8 +364,9 @@
             this.replist.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.replist.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.replist.ThemeStyle.RowsStyle.Height = 25;
-            this.replist.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.replist.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.DarkSeaGreen;
             this.replist.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.replist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.replist_CellContentClick);
             // 
             // Repairs
             // 
