@@ -42,15 +42,6 @@ namespace mobile_repairs_task
         {
 
         }
-        private void getCost()
-        {
-            query = "SELECT * FROM sparetb WHERE SpID = {0}";
-            query = string.Format(query, spare.SelectedValue.ToString());
-            foreach ( DataRow dr in con.getData(query).Rows )
-            {
-                sparecost.Text= dr["SpCost"].ToString();
-            }
-        }
         private void getCustomers()
         {
             query = "SELECT * FROM customertb";
@@ -67,6 +58,16 @@ namespace mobile_repairs_task
             spare.DataSource = con.getData(query);
             query = "";
         }
+        private void getCost()
+        {
+                query = "SELECT * FROM sparetb WHERE SpID = " + spare.SelectedValue.ToString();
+                foreach (DataRow dr in con.getData(query).Rows)
+                {
+                    sparecost.Text = dr["SpCost"].ToString();
+                }
+            
+        }
+
         private void showRepairs()
         {
             query = "SELECT * FROM reptb";
@@ -107,9 +108,7 @@ namespace mobile_repairs_task
             dname.Text = "";
             dmodel.Text = "";
             problem.Text = "";
-            sparecost.Text = "";
             totalcost.Text = "";
-            spare.SelectedIndex = -1;
             if (cust.Text == "")
             {
                 key = 0;
@@ -120,14 +119,11 @@ namespace mobile_repairs_task
         private void clear()
         {
             query = "";
-            cust.SelectedIndex = -1;
             phone.Text = "";
             dname.Text = "";
             dmodel.Text = "";
             problem.Text = "";
-            sparecost.Text = "";
             totalcost.Text = "";
-            spare.SelectedIndex = -1;
             key = 0;
         }
 
@@ -149,6 +145,7 @@ namespace mobile_repairs_task
 
         private void spare_SelectedValueChanged(object sender, EventArgs e)
         {
+            getspares();
             getCost();
         }
     }
