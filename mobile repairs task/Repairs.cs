@@ -42,6 +42,14 @@ namespace mobile_repairs_task
         {
 
         }
+        private void getCost()
+        {
+            query = "SELECT * FROM sparetb WHERE SpID = " + spare.SelectedValue.ToString();
+            foreach ( DataRow dr in con.getData(query).Rows )
+            {
+                sparecost.Text= dr["SpCost"].ToString();
+            }
+        }
         private void getCustomers()
         {
             query = "SELECT * FROM customertb";
@@ -79,7 +87,7 @@ namespace mobile_repairs_task
                 int spcost =Convert.ToInt32(sparecost.Text);
                 int totalcost = Convert.ToInt32(this.totalcost.Text);
                 query = "INSERT INTO reptb VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{7})";
-                String.Format(query,date,custcb,phone,dname,dmodel,problem,spare,totalcost);
+                query = String.Format(query,date,custcb,phone,dname,dmodel,problem,spare,totalcost);
                 int r = con.setData(query);
                 MessageBox.Show("Repair Added Successfully");
                 showRepairs();
@@ -147,6 +155,11 @@ namespace mobile_repairs_task
                 clear();
                 showRepairs();
             }
+        }
+
+        private void spare_SelectedValueChanged(object sender, EventArgs e)
+        {
+            getCost();
         }
     }
 }

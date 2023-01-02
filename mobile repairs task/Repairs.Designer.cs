@@ -276,6 +276,7 @@
             this.spare.Name = "spare";
             this.spare.Size = new System.Drawing.Size(200, 29);
             this.spare.TabIndex = 35;
+            this.spare.SelectedValueChanged += new System.EventHandler(this.spare_SelectedValueChanged);
             // 
             // title
             // 
