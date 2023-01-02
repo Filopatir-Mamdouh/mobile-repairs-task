@@ -298,6 +298,7 @@
             // 
             // sparecost
             // 
+            this.sparecost.Enabled = false;
             this.sparecost.Location = new System.Drawing.Point(123, 556);
             this.sparecost.Name = "sparecost";
             this.sparecost.Size = new System.Drawing.Size(111, 29);
@@ -308,9 +309,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(256, 532);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 21);
+            this.label10.Size = new System.Drawing.Size(100, 21);
             this.label10.TabIndex = 39;
-            this.label10.Text = "Total Cost";
+            this.label10.Text = "Repair Cost";
             // 
             // totalcost
             // 

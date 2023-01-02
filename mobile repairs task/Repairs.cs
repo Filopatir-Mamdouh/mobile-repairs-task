@@ -13,7 +13,7 @@ namespace mobile_repairs_task
     public partial class Repairs : Form
     {
         Functions con;
-        string query;
+        string query = "";
         public Repairs()
         {
             InitializeComponent();
@@ -44,7 +44,8 @@ namespace mobile_repairs_task
         }
         private void getCost()
         {
-            query = "SELECT * FROM sparetb WHERE SpID = " + spare.SelectedValue.ToString();
+            query = "SELECT * FROM sparetb WHERE SpID = {0}";
+            query = string.Format(query, spare.SelectedValue.ToString());
             foreach ( DataRow dr in con.getData(query).Rows )
             {
                 sparecost.Text= dr["SpCost"].ToString();
@@ -56,6 +57,7 @@ namespace mobile_repairs_task
             cust.DisplayMember = con.getData(query).Columns["CustName"].ToString();
             cust.ValueMember = con.getData(query).Columns["CustID"].ToString();
             cust.DataSource = con.getData(query);
+            query = "";
         }
         private void getspares()
         {
@@ -63,6 +65,7 @@ namespace mobile_repairs_task
             spare.DisplayMember = con.getData(query).Columns["SpName"].ToString();
             spare.ValueMember = con.getData(query).Columns["SpID"].ToString();
             spare.DataSource = con.getData(query);
+            query = "";
         }
         private void showRepairs()
         {
@@ -85,7 +88,8 @@ namespace mobile_repairs_task
                 string problem = this.problem.Text;
                 int spare = Convert.ToInt32(this.spare.SelectedValue.ToString());
                 int spcost =Convert.ToInt32(sparecost.Text);
-                int totalcost = Convert.ToInt32(this.totalcost.Text);
+                int repaircost = Convert.ToInt32(this.totalcost.Text);
+                int totalcost = spcost + repaircost;
                 query = "INSERT INTO reptb VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{7})";
                 query = String.Format(query,date,custcb,phone,dname,dmodel,problem,spare,totalcost);
                 int r = con.setData(query);
@@ -98,10 +102,15 @@ namespace mobile_repairs_task
         int key = 0;
         private void replist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CustName.Text = replist.SelectedRows[0].Cells[1].Value.ToString();
-            CustAdd.Text = replist.SelectedRows[0].Cells[3].Value.ToString();
-            CustPhone.Text = replist.SelectedRows[0].Cells[2].Value.ToString();
-            if (CustName.Text == "")
+            cust.SelectedValue = replist.SelectedRows[0].Cells[1].Value.ToString(); ;
+            phone.Text = "";
+            dname.Text = "";
+            dmodel.Text = "";
+            problem.Text = "";
+            sparecost.Text = "";
+            totalcost.Text = "";
+            spare.SelectedIndex = -1;
+            if (cust.Text == "")
             {
                 key = 0;
             }
@@ -122,25 +131,6 @@ namespace mobile_repairs_task
             key = 0;
         }
 
-        private void updatebtn_Click(object sender, EventArgs e)
-        {
-            if (CustName.Text == "" || CustPhone.Text == "" || CustAdd.Text == "" || key == 0)
-            {
-                MessageBox.Show("Missing Data!!!");
-            }
-            else
-            {
-                string name = CustName.Text;
-                string phone = CustPhone.Text;
-                string add = CustAdd.Text;
-                query = "UPDATE reptb SET CustName = '" + name + "', CustPhone = '" + phone + "', CustAdd = '" + add + "' WHERE CustID =" + key;
-                int r = con.setData(query);
-                MessageBox.Show("Repair Updated :D");
-                clear();
-                showRepairs();
-            }
-        }
-
         private void deletebtn_Click(object sender, EventArgs e)
         {
             if (key == 0)
@@ -159,7 +149,7 @@ namespace mobile_repairs_task
 
         private void spare_SelectedValueChanged(object sender, EventArgs e)
         {
-            getCost();
+            //getCost();
         }
     }
 }
