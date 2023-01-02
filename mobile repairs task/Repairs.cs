@@ -135,7 +135,7 @@ namespace mobile_repairs_task
             }
             else
             {
-                query = "DELETE FROM reptb WHERE CustID=" + key;
+                query = "DELETE FROM reptb WHERE RepCode=" + key;
                 int r = con.setData(query);
                 MessageBox.Show("Repair Deleted!!");
                 clear();
