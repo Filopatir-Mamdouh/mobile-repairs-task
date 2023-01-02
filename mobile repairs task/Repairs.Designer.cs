@@ -42,7 +42,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.deletebtn = new System.Windows.Forms.Button();
             this.savebtn = new System.Windows.Forms.Button();
-            this.updatebtn = new System.Windows.Forms.Button();
             this.phone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.problem = new System.Windows.Forms.TextBox();
@@ -115,12 +114,13 @@
             this.deletebtn.FlatAppearance.BorderSize = 0;
             this.deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deletebtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deletebtn.Location = new System.Drawing.Point(187, 648);
+            this.deletebtn.Location = new System.Drawing.Point(246, 600);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(110, 42);
             this.deletebtn.TabIndex = 24;
             this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // savebtn
             // 
@@ -134,19 +134,7 @@
             this.savebtn.TabIndex = 23;
             this.savebtn.Text = "Save";
             this.savebtn.UseVisualStyleBackColor = false;
-            // 
-            // updatebtn
-            // 
-            this.updatebtn.BackColor = System.Drawing.Color.Gold;
-            this.updatebtn.FlatAppearance.BorderSize = 0;
-            this.updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updatebtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updatebtn.Location = new System.Drawing.Point(256, 600);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(110, 42);
-            this.updatebtn.TabIndex = 22;
-            this.updatebtn.Text = "Update";
-            this.updatebtn.UseVisualStyleBackColor = false;
+            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
             // 
             // phone
             // 
@@ -276,7 +264,7 @@
             this.spare.Name = "spare";
             this.spare.Size = new System.Drawing.Size(200, 29);
             this.spare.TabIndex = 35;
-            this.spare.SelectedValueChanged += new System.EventHandler(this.spare_SelectedValueChanged);
+            this.spare.SelectionChangeCommitted += new System.EventHandler(this.spare_SelectionChangeCommitted);
             // 
             // title
             // 
@@ -338,7 +326,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.replist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.replist.ColumnHeadersHeight = 4;
+            this.replist.ColumnHeadersHeight = 20;
             this.replist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -369,7 +357,7 @@
             this.replist.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.replist.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.replist.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.replist.ThemeStyle.HeaderStyle.Height = 4;
+            this.replist.ThemeStyle.HeaderStyle.Height = 20;
             this.replist.ThemeStyle.ReadOnly = true;
             this.replist.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.replist.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -403,7 +391,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.savebtn);
-            this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.phone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.problem);
@@ -434,7 +421,6 @@
         private Panel panel2;
         private Button deletebtn;
         private Button savebtn;
-        private Button updatebtn;
         private TextBox phone;
         private Label label4;
         private TextBox problem;

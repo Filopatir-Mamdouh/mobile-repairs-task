@@ -91,7 +91,7 @@ namespace mobile_repairs_task
                 int spcost =Convert.ToInt32(sparecost.Text);
                 int repaircost = Convert.ToInt32(this.totalcost.Text);
                 int totalcost = spcost + repaircost;
-                query = "INSERT INTO reptb VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{7})";
+                query = "INSERT INTO reptb VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{6},{7})";
                 query = String.Format(query,date,custcb,phone,dname,dmodel,problem,spare,totalcost);
                 int r = con.setData(query);
                 MessageBox.Show("Repair Added Successfully");
@@ -103,18 +103,7 @@ namespace mobile_repairs_task
         int key = 0;
         private void replist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            cust.SelectedValue = replist.SelectedRows[0].Cells[1].Value.ToString(); ;
-            phone.Text = "";
-            dname.Text = "";
-            dmodel.Text = "";
-            problem.Text = "";
-            totalcost.Text = "";
-            if (cust.Text == "")
-            {
-                key = 0;
-            }
-            else
-                key = Convert.ToInt32(replist.SelectedRows[0].Cells[0].Value.ToString());
+            key = Convert.ToInt32(replist.SelectedRows[0].Cells[0].Value.ToString());
         }
         private void clear()
         {
@@ -138,14 +127,11 @@ namespace mobile_repairs_task
                 query = "DELETE FROM reptb WHERE RepCode=" + key;
                 int r = con.setData(query);
                 MessageBox.Show("Repair Deleted!!");
-                clear();
                 showRepairs();
             }
         }
-
-        private void spare_SelectedValueChanged(object sender, EventArgs e)
+        private void spare_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            getspares();
             getCost();
         }
     }
