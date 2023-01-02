@@ -12,9 +12,13 @@ namespace mobile_repairs_task
 {
     public partial class Repairs : Form
     {
+        Functions con;
+        string query;
         public Repairs()
         {
             InitializeComponent();
+            con = new Functions();
+            showRepairs();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -33,6 +37,15 @@ namespace mobile_repairs_task
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void showRepairs()
+        {
+            query = "SELECT * FROM reptb";
+            replist.DataSource = con.getData(query);
+        }
+        private void savebtn_Click(object sender, EventArgs e)
         {
 
         }
