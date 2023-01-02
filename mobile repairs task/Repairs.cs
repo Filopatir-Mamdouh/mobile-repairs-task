@@ -20,6 +20,7 @@ namespace mobile_repairs_task
             con = new Functions();
             showRepairs();
             getCustomers();
+            getspares();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -47,6 +48,13 @@ namespace mobile_repairs_task
             cust.DisplayMember = con.getData(query).Columns["CustName"].ToString();
             cust.ValueMember = con.getData(query).Columns["CustID"].ToString();
             cust.DataSource = con.getData(query);
+        }
+        private void getspares()
+        {
+            query = "SELECT * FROM sparetb";
+            spare.DisplayMember = con.getData(query).Columns["SpName"].ToString();
+            spare.ValueMember = con.getData(query).Columns["SpID"].ToString();
+            spare.DataSource = con.getData(query);
         }
         private void showRepairs()
         {
