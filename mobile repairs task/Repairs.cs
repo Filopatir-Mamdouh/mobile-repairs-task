@@ -149,7 +149,7 @@ namespace mobile_repairs_task
 
         private void spare_SelectedValueChanged(object sender, EventArgs e)
         {
-            //getCost();
+            getCost();
         }
     }
 }
